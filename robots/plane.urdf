@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="plane">
+  <link name="base_link">
+    <collision>
+      <geometry>
+        <box size="1000 1000 0.1"/>  <!-- A flat plane -->
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <box size="1000 1000 0.1"/>  <!-- A flat plane -->
+      </geometry>
+      <material name="gray"/>
+    </visual>
+  </link>
+</robot>

@@ -1,0 +1,85 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "../protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.4538042672425606 0.2001981270639688 -0.8683215976540729 2.3048636735270214
+  position 0.026711270869047676 0.6122104287214859 0.7211619641737033
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation -0.0139218 0.011464 0
+  rotation 0 0 -1 1.8915
+  floorSize 50 50
+  floorTileSize 0.25 0.25
+  floorAppearance PBRAppearance {
+    metalness 0
+  }
+}
+E-puck {
+  translation -0.131571 -0.146399 -6.39566e-05
+  rotation 2.5402599876696397e-05 9.519799953791122e-05 0.9999999951460243 2.59859
+  controller "<extern>"
+  groundSensorsSlot [
+    DistanceSensor {
+      translation 0 -0.015 0.01
+      rotation 0 1 0 1.57
+      name "ir0"
+      lookupTable [
+        0 0 0
+        0.02 1000 0
+      ]
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0 0.015 0.01
+      rotation 0 1 0 1.57
+      name "ir1"
+      lookupTable [
+        0 0 0
+        0.02 1000 0
+      ]
+      type "infra-red"
+    }
+  ]
+}
+SolidBox {
+  translation -0.15062634690669252 -0.31334320798625726 0.049607599999999995
+  rotation 2.1765021870812548e-17 -7.160368107588214e-17 -0.9999999999999999 0.9361138862117149
+  size 0.1 0.1 0.1
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.039363 -0.00724508 0
+  children [
+    Transform {
+      scale 0.015 0.015 0.005
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            roughness 1
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "../protos/trackroad.obj"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+  name "track"
+}

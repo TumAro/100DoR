@@ -1,0 +1,223 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/CardboardBox.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.4924384026072206 -0.24716366713077412 0.8345145542697963 3.934906028468924
+  position 0.2974832989699741 -0.5151341275127831 0.4030607079714239
+  follow "robot"
+  followType "Pan and Tilt Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation -0.0294064 0.0278221 1.16573e-15
+  floorSize 10 10
+}
+Wall {
+  translation -1.48074 -1.80278 -9.49241e-15
+  rotation 2.3464099999870814e-06 2.3464099999870814e-06 0.9999999999944944 1.5708
+  name "wall 1(4)"
+  size 0.02 0.3 0.08
+}
+Wall {
+  translation -1.35825 -1.94446 -1.04916e-14
+  rotation 2.3464099999870814e-06 2.3464099999870814e-06 0.9999999999944944 1.5708
+  name "wall 1(6)"
+  size 0.02 0.3 0.08
+}
+Wall {
+  translation -1.63426 -1.96253 -8.9373e-15
+  rotation 5.672108215044546e-09 -0.788631751825513 -0.6148658065079098 -5.307179586466759e-06
+  name "wall 1(7)"
+  size 0.02 0.3 0.08
+}
+Wall {
+  translation -1.49857 -2.1052 -9.60343e-15
+  rotation -5.672108215044547e-09 0.788631751825513 0.6148658065079098 5.307156870259904e-06
+  name "wall 1(8)"
+  size 0.02 0.3 0.08
+}
+Wall {
+  translation -1.49874 -0.972989 -9.60343e-15
+  name "wall 1(3)"
+  size 0.02 1 0.08
+}
+CardboardBox {
+  translation -1.76825 -1.92765 0.02
+  size 0.05 0.05 0.05
+}
+Robot {
+  translation 0.16451346470840134 -0.6935644799320262 0.0001390059514371246
+  rotation 0.9999735724523827 -0.0037414027661112023 0.006233482346238565 0.13426673062507477
+  children [
+    DistanceSensor {
+      translation -0.02123 -0.0211964 0.025
+      rotation 0 0 1 -2.356985307179586
+      name "ds_right"
+    }
+    DistanceSensor {
+      translation 8.09591e-06 -0.04 0.025
+      rotation 0 0 1 -1.571595307179586
+      name "ds_front"
+    }
+    DistanceSensor {
+      translation 0.0211963 -0.0212301 0.025
+      rotation 0 0 1 -0.786195307179586
+      name "ds_left"
+    }
+    Compass {
+      translation 0 0 0.025
+    }
+    DEF Body Pose {
+      translation 0 0 0.023
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.803922 0.670588 0.560784
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.08 0.08 0.03
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 7043.880487844396
+        anchor 0.045 0 0.025
+      }
+      device [
+        RotationalMotor {
+          name "motor1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.04508177571016289 -2.2060899302016165e-05 0.024972740095189617
+        rotation 0.20710773554258577 -0.9553001013530237 -0.21096943435797844 1.6113420702362908
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics DEF wheel_physics Physics {
+        }
+        linearVelocity 1.8700540641214466e-05 -0.08850912431758944 5.239205283269025e-06
+        angularVelocity 3.536645539714737 0.0007493114312404807 0.00042190969580049615
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 770.6951819169163
+        anchor -0.045 0 0.025
+      }
+      device [
+        RotationalMotor {
+          name "motor2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.045079008371755214 2.899219830813088e-05 0.025008986291471844
+        rotation -0.6593567966361661 0.3651167442829103 -0.6572201897187436 2.4533248361810407
+        children [
+          USE wheel
+        ]
+        name "solid(1)"
+        boundingObject USE wheel
+        physics USE wheel_physics
+        linearVelocity 1.8767989347794927e-05 -0.08852646456086062 -9.643744176069694e-06
+        angularVelocity 3.5366192567929327 0.0007494374475839734 0.00042189518287346776
+      }
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "<extern>"
+  linearVelocity 2.236385411210556e-05 -0.08748454290846149 0.00012266287204455516
+  angularVelocity 0.536633773211274 -0.0016789319379590952 -0.0011199633221031543
+}
+Wall {
+  translation 0.102707 -0.837673 -9.60343e-15
+  name "wall 1"
+  size 0.02 1 0.08
+}
+Wall {
+  translation -1.34675 -0.974887 -1.13797e-14
+  name "wall 1(1)"
+  size 0.02 1 0.08
+}
+Wall {
+  translation -0.505241 -0.530997 -1.11577e-14
+  name "wall 1(5)"
+  size 0.02 1 0.08
+}
+Wall {
+  translation 0.0060492 -0.221517 -1.18238e-14
+  rotation 0 0 1 1.5708
+  name "wall 1(2)"
+  size 0.02 1 0.08
+}
+Wall {
+  translation -0.0308599 -1.25457 -8.21568e-15
+  name "wall 3"
+  size 0.02 0.5 0.08
+}
+Wall {
+  translation 0.231666 -0.471366 -8.10466e-15
+  name "wall 3(3)"
+  size 0.02 0.5 0.08
+}
+Wall {
+  translation -0.376389 -0.60625 -8.99284e-15
+  name "wall 3(2)"
+  size 0.02 0.5 0.08
+}
+Wall {
+  translation 0.230656 -0.998724 -3.44169e-15
+  name "wall 2"
+  size 0.02 1 0.08
+}
+Wall {
+  translation -0.00821453 -1.50802 -1.95954e-14
+  rotation 0 0 1 1.5708
+  name "wall 4"
+  size 0.02 0.5 0.08
+}
+Wall {
+  translation -0.270604 -0.996042 -2.00395e-14
+  rotation 0 0 1 1.5708
+  name "wall 4(2)"
+  size 0.02 0.5 0.08
+}
+Wall {
+  translation -0.137872 -0.349948 -1.87072e-14
+  rotation 0 0 1 1.5708
+  name "wall 4(1)"
+  size 0.02 0.5 0.08
+}
+Wall {
+  translation -0.137492 -0.865842 -1.95954e-14
+  rotation 0 0 1 1.5708
+  name "wall 4(3)"
+  size 0.02 0.5 0.08
+}
