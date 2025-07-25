@@ -10,10 +10,11 @@ There will be days which would look like can be done in one day but actually bec
 
 **D1 - first robot**  
 `>>` install all python and dependencies.  
-`>>` install [PyBullet](https://pybullet.org/wordpress/index.php/forum-2/)  
+`>>` install PyBullet  
 `>>` define a simple robot with URDF  
 `>>` give basic movement functionality  
 `>>` simulate it.  
+<video src="https://files.catbox.moe/i76psh.mp4" controls="controls" style="max-height: 400px;"></video>
 
 
 **D2 - programming for robots**  
@@ -28,7 +29,7 @@ There will be days which would look like can be done in one day but actually bec
 `>>` learnt how to work with mujoco xml; coordinates, movements, etc.  
 `>>` setup complex obstacle environment in mujoco  
 `>>` custom WASD movement with mujoco  
-![day 3 obstacle](media/day%203.png)
+<img src="./media/3.png" width="300">
 
 
 **D4 - physics in simulation**  
@@ -43,18 +44,21 @@ There will be days which would look like can be done in one day but actually bec
 `>>` learnt to apply rotation in 3d space  
 `>>` learnt about homogenous transformation to trivialize transformation in higher spaces.  
 `>>` studied the euler angles and euler rotation theorem  
+<img src="./media/5.jpeg" height="400">
 
 **D5.2 - theory for forward and inverse kinematics**  
 `>>` used tkinter to visualise a 2D forward kinematics principle  
 `>>` learnt all the necessary inverse kinematics and joint angles  
 `>>` learnt how to solve for IK with both trigonometric and intersection of circle methods  
 `>>` created a dashboard with tkinter to update the arm with given end point co-ordinate  
+<video src="https://files.catbox.moe/m4xf4w.mp4" controls="controls" style="max-width: 300px;"></video>
 
 **D6 - Intro to Robot Sensors and obstacle detection**  
 `>>` learn pygame and pymunk to simulate  
 `>>` study collision detection theory - Separated Axis Theorem  
 `>>` simulate collision detection  
 `>>` add bounce back path after each collision  
+<video src="https://files.catbox.moe/5ulvhm.mp4" controls="controls" style="max-width: 600px;"></video>
 
 **D7 - Open loop basic robot control**  
 `>>` setup webots  
@@ -67,6 +71,8 @@ There will be days which would look like can be done in one day but actually bec
 `>>` introduction to PID controllers  
 `>>` understand and fine tune *kp, ki, kd*  
 `>>` implement a feedforward control for a robot to move to a box but never collide  
+<img src="./media/8.jpeg" width="500">
+<video src="https://files.catbox.moe/2ihzdb.mp4" controls="controls" style="max-width: 600px;"></video>
 
 **D9 - Tuning PID controllers**  
 `>>` learnt about PID tuning- heuristic, Ziegler-Nichols, Cohen-Coon.  
@@ -74,8 +80,9 @@ There will be days which would look like can be done in one day but actually bec
 `>>` tested and analysed a lot of *kp* values for ZN methods to calculate TU and KU for line follower  
 `>>` tested a lot on webot, external controls and analysing time v/s control curves  
 `>>` finally heuristically achieved control for line following with only two sensor  
-`>>` implemented Ziegler-Nichols tuning method perfectly.
-![line follower](media/day%209.jpg) 
+`>>` implemented Ziegler-Nichols tuning method perfectly.  
+<video src="https://files.catbox.moe/zocd6c.mp4" controls="controls" style="max-width: 600px;"></video>
+<video src="https://files.catbox.moe/hoax95.mp4" controls="controls" style="max-width: 600px;"></video>
 
 **D10 - Forward Kinematics on UR3E**  
 `>>` Review forward kinematics  
@@ -84,6 +91,8 @@ There will be days which would look like can be done in one day but actually bec
 `>>` implemented manual control for *UR3E* bot  
 `>>` learnt about importance of choosing axis when performing homogeneous transforms  
 `>>` real time FK calculator with tkinter  
+<video src="https://files.catbox.moe/eevpo3.mp4" controls="controls" style="max-width: 600px;"></video>
+<video src="https://files.catbox.moe/lnj6rw.mp4" controls="controls" style="max-width: 600px;"></video>
 
 **D11 - Differential Drive Theory**  
 `>>` learnt theory of differential drive kinematics  
@@ -91,6 +100,7 @@ There will be days which would look like can be done in one day but actually bec
 `>>` Implement velocity control  
 `>>` put it in a path and predict the movement with the equation  
 `>>` plot the equation, the path looked successfully predicted  
+<img src="./media/11.jpeg" height="450">
 
 **D12 - Wall follow with Differential drive**  
 `>>` created parallel wall  
@@ -98,9 +108,11 @@ There will be days which would look like can be done in one day but actually bec
 `>>` tuned PID for wall follow  
 `>>` created complex wall turns  
 `>>` tuned control for turns  
-![wall follower](media/day%2012.jpg)
+<img src="./media/12.jpg" width="500">
+<video src="https://files.catbox.moe/rmn2sn.mp4" controls="controls" style="max-width: 600px;"></video>
 
 **D13 - Add turnings for complex mazes/ Learn about mechanism**  
 `>>` add proper wall detection  
 `>>` fine tune PID turning for L, U and large corridor turns  
 `>>` learn about theoretical mechanisms - kinematics pair, inversion, Loop Closure Equations, principles of 4-linkage mechanism  
+<video src="https://files.catbox.moe/zaem5x.mp4" controls="controls" style="max-width: 600px;"></video>
